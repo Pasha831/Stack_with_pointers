@@ -23,7 +23,7 @@ public:
 	void pop();
 	void show();
 };
-void Stack::push(int d)
+void Stack::push(int d) // adding new element in stack
 {
 	if (first == NULL)
 	{
@@ -39,16 +39,17 @@ void Stack::push(int d)
 		first = newlink;
 	}
 }
-void Stack::pop()
+void Stack::pop() // deleting last element of stack
 {
 	first = first->prev;
 }
-void Stack::show()
+void Stack::show() // showing our stack
 {
-	while (first != NULL)
+	Link* tmp = first;
+	while (tmp != NULL)
 	{
-		cout << first->data << endl;
-		first = first->prev;
+		cout << tmp->data << endl;
+		tmp = tmp->prev;
 	}
 }
 
@@ -60,7 +61,7 @@ int main()
 		st.push(i);
 		i += 11;
 	}
-	st.pop();
+	st.pop(); 
 	st.show();
 	system("pause");
 }
